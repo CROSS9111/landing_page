@@ -220,6 +220,9 @@ main {
     color: white;
     padding: 80px 64px 200px 64px;
     border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     /* margin: 0 64px 40px 64px; */
 }
 
@@ -231,45 +234,67 @@ main {
 
 .curriculum-container {
     display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
+    justify-content: flex-start; /* 中央揃えに変更 */
+    gap: 48px; /* 列間の間隔を40pxに設定 */
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .curriculum-column {
-    flex: 1;
+    flex: 0 0 296px; /* Fixed width of exactly 296px */
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .curriculum-column h3 {
-    color: white;
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.curriculum-block {
-    background-color: white;
     color: #333;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 10px;
+    font-weight: 300;
+    padding: 8px 16px;
+    background-color: #D9D9D9;
+    margin: 0;
+    text-align: left;
 }
 
-.curriculum-block h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
+.curriculum-content {
+    padding: 16px 24px;
 }
 
-.curriculum-block ul li {
-    font-size: 14px;
-    margin-bottom: 5px;
+.curriculum-item {
+    margin-bottom: 8px;
+}
+
+.curriculum-item h4 {
+    color: #000000;
+    font-size: 10px;
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+
+.curriculum-item ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 20px;
+}
+
+.curriculum-item ul li {
+    color: black;
+    font-size: 10px;
+    margin-bottom: 8px;
     position: relative;
     padding-left: 15px;
+    line-height: 1.4;
 }
 
-.curriculum-block ul li:before {
+.curriculum-item ul li:before {
     content: "•";
     position: absolute;
     left: 0;
+    color: #0B2F4C;
 }
 
 .program-example {
@@ -324,17 +349,28 @@ main {
 
 /* Application Section */
 .application-section {
-    margin: 0 64px 40px 64px; /* 左右のマージンを追加 */
+    position: relative;
+    margin-top: -100px; /* 上に移動させてcurriculum-sectionに重ねる */
+    background-color: white;
+    border-radius: 15px;
+    padding: 80px 64px; /* 左右のパディングを設定 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* 横幅100%に設定 */
+    box-sizing: border-box; /* パディングを幅に含める */
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .application-section h2 {
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .application-section p {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-bottom: 4px;
 }
 
 .application-button {
@@ -403,13 +439,11 @@ footer {
 @media (max-width: 768px) {
     .curriculum-container {
         flex-direction: column;
+        align-items: center;
     }
     
-    .hours-container {
-        flex-wrap: wrap;
-    }
-    
-    .hours-item {
-        width: 45%;
+    .curriculum-column {
+        flex: 0 0 296px;
+        margin-bottom: 20px;
     }
 }
