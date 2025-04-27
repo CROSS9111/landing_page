@@ -218,13 +218,14 @@ main {
 .curriculum-section {
     background-color: #0B2F4C;
     color: white;
-    padding: 30px;
-    border-radius: 5px;
+    padding: 80px 64px 200px 64px;
+    border-radius: 15px;
     /* margin: 0 64px 40px 64px; */
 }
 
 .curriculum-section h2 {
     color: white;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
@@ -269,6 +270,24 @@ main {
     content: "•";
     position: absolute;
     left: 0;
+}
+
+.program-example {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px dotted rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.program-example h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.program-example p {
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 /* Study Hours */
