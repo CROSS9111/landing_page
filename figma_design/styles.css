@@ -1,184 +1,326 @@
+/* Global Styles */
 body {
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #EEEEEE;
-    color: #0B2F4C;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #0B2F4C;
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Header Styles */
 header {
     background-color: #0B2F4C;
-    padding: 20px;
-    position: relative;
-    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    background-color: #0B2F4C;
-    color: #FFFFFF;
+    height: 100%;
+    position: relative;
 }
 
-.header-logo {
-    max-width: 50px;
-    height: auto;
+.logo-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-left: 16px;
+    margin-top: 21px;
 }
 
 .header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.header-text h1 {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0;
-}
-
-.header-text p {
-    font-size: 12px;
-    font-weight: 400;
-    margin: 0;
-}
-
-.contact-button {
-    background-color: #FFFFFF;
-    color: #0B2F4C;
-    border: none;
-    width: 85px;
-    height: 28px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.header-background {
-    background-color: #0B2F4C;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    color: white;
+    font-size: 10px;
+    margin-left: 4px;
+    margin-top: 11px;
 }
 
 .header-logo {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.header-content h1 {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 4%;
-    margin: 0;
+    width: 112px;
+    height: 32px;
 }
 
 .contact-button {
-    background-color: #135589;
-    color: #FCFCFC;
-    border: none;
-    padding: 4px 22px;
-    border-radius: 16px;
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 7.5%;
-    cursor: pointer;
-}
-
-.header-content h1 {
-    font-size: 44px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.contact-button {
-    background-color: #135589;
-    color: #FCFCFC;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 16px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.lp-background {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.background-image {
-    width: 100%;
-    height: auto;
-}
-
-.lp-overlay {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.lp-overlay h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-}
-
-.lp-button {
-    background-color: #FFFFFF;
+    background-color: white;
     color: #0B2F4C;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
+    width: 85px;
+    height: 28px;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25px;
+    right: 22px;
 }
 
-.course-overview h2,
-.training-purpose h2,
-.expected-effects h2 {
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background-image: url('https://bloblppictures.blob.core.windows.net/lppictures/LP_background.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.hero-content {
+    color: white;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero-button {
+    background-color: white;
+    color: #0B2F4C;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Course Overview Section */
+.course-overview {
+    margin-bottom: 40px;
+}
+
+.course-overview h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.course-description, .training-purpose, .expected-effects {
+    margin-bottom: 30px;
+}
+
+h3 {
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.course-overview p,
+.course-details li, .expected-effects ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
 .training-purpose p {
-    font-size: 12px;
-    line-height: 2em;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Curriculum Section */
+.curriculum-section {
+    background-color: #0B2F4C;
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.curriculum-section h2 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.curriculum-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.curriculum-column {
+    flex: 1;
+}
+
+.curriculum-column h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.curriculum-block {
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.curriculum-block h4 {
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
-.course-overview ul,
-.expected-effects ul {
-    list-style-type: none;
-    padding: 0;
+.curriculum-block ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
 }
 
-.course-overview ul li,
-.expected-effects ul li {
-    font-size: 12px;
-    line-height: 2em;
+.curriculum-block ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* Study Hours */
+.study-hours h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hours-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.hours-item {
+    padding: 15px;
+}
+
+.hours-value {
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
+.hours-value span {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.hours-label {
+    font-size: 12px;
+}
+
+/* Application Section */
+.application-section {
+    margin-bottom: 40px;
+}
+
+.application-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.application-section p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.application-button {
+    background-color: #0B2F4C;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    width: fit-content;
+    margin: 20px 0;
+}
+
+.application-process, .application-notes {
+    margin-top: 30px;
+}
+
+.application-process ul li, .application-notes ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.more-info-button {
+    background-color: transparent;
+    color: #0B2F4C;
+    border: 1px solid #0B2F4C;
+    padding: 8px 16px;
+    margin-top: 15px;
+}
+
+/* Footer */
 footer {
     background-color: #0B2F4C;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 10px;
-    font-size: 10px;
+    color: white;
+    padding: 30px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-links, .footer-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a, .footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .curriculum-container {
+        flex-direction: column;
+    }
+    
+    .hours-container {
+        flex-wrap: wrap;
+    }
+    
+    .hours-item {
+        width: 45%;
+    }
 }
