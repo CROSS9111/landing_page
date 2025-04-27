@@ -154,7 +154,7 @@ main {
 }
 
 .course-overview h2 {
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 40px;
     padding-bottom: 10px;
     color: #0B2F4C;
@@ -163,7 +163,7 @@ main {
 }
 
 .section-title {
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 20px;
     color: #0B2F4C;
     font-weight: bold;
@@ -174,14 +174,14 @@ main {
 }
 
 .course-description p, .training-purpose p {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
 .course-details li, .expected-effects ul li {
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1.8;
     position: relative;
     padding-left: 5px;
@@ -350,45 +350,229 @@ main {
 /* Application Section */
 .application-section {
     position: relative;
-    margin-top: -100px; /* 上に移動させてcurriculum-sectionに重ねる */
+    margin-top: -100px;
     background-color: white;
     border-radius: 15px;
-    padding: 80px 64px; /* 左右のパディングを設定 */
+    padding: 80px 64px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* 横幅100%に設定 */
-    box-sizing: border-box; /* パディングを幅に含める */
+    width: 100%;
+    box-sizing: border-box;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
 }
 
-.application-section h2 {
+.subsidy-title {
     font-size: 18px;
     margin-bottom: 16px;
+    color: #0B2F4C;
 }
 
-.application-section p {
+.subsidy-description p {
     font-size: 12px;
     margin-top: 0px;
     margin-bottom: 4px;
 }
 
-.application-button {
+.subsidy-info-button {
+    background-color: #0B2F4C;
+    color: white;
+    font-size: 10px;
+    padding: 10px 20px;
+    display: block;
+    width: 216px;
+    height: 36px;
+    line-height: 16px;
+    margin: 24px auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.subsidy-info-button::after {
+    content: " ▶";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+/* 助成額・助成率 Styles */
+.subsidy-rate {
+    margin-top: 40px;
+}
+
+.subsidy-rate h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #0B2F4C;
+}
+
+.rate-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rate-box {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rate-box h4 {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.small-business h4 {
+    background-color: #0B2F4C;
+}
+
+.large-business h4 {
+    background-color: #888;
+}
+
+.rate-content {
+    padding: 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.base-amount {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.rate-detail {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.actual-cost {
+    font-size: 10px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.final-cost {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 申請プロセス・流れ Styles */
+.application-process {
+    margin-top: 40px;
+}
+
+.application-process h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #0B2F4C;
+}
+
+.application-process p {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.process-steps {
+    counter-reset: process-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.process-steps > li {
+    position: relative;
+    counter-increment: process-counter;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-left: 25px;
+}
+
+.process-steps > li:before {
+    content: counter(process-counter) ".";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.process-steps ul {
+    margin-top: 8px;
+    padding-left: 25px;
+    list-style-type: none;
+}
+
+.process-steps ul li {
+    position: relative;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 15px;
+}
+
+.process-steps ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* 申請方法 Styles */
+.application-method {
+    margin-top: 40px;
+}
+
+.application-method h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #0B2F4C;
+}
+
+.application-method p {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.application-method ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.application-method ul li {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.application-method ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* Contact Button Styles */
+.contact-info-button {
     background-color: #0B2F4C;
     color: white;
     padding: 10px 20px;
     display: block;
     width: fit-content;
-    margin: 20px 0;
+    margin: 40px auto 0;
+    position: relative;
 }
 
-.application-process, .application-notes {
-    margin-top: 30px;
-}
-
-.application-process ul li, .application-notes ul li {
-    font-size: 14px;
-    margin-bottom: 10px;
+.contact-info-button::after {
+    content: " ▶";
+    font-size: 10px;
+    margin-left: 5px;
 }
 
 .more-info-button {
@@ -436,7 +620,7 @@ footer {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .curriculum-container {
         flex-direction: column;
         align-items: center;
