@@ -29,7 +29,7 @@ button {
 header {
     background-color: #0B2F4C;
     height: 64px;
-    position: sticky;
+    position: relative; /* stickyからrelativeに変更 */
     top: 0;
     z-index: 100;
 }
@@ -84,7 +84,7 @@ header {
     background-position: center;
     height: 400px;
     width: 768px;
-    margin: 0 auto;
+    margin: 0 auto 80px; /* 下部に80pxのマージンを追加 */
     display: flex;
     align-items: flex-start;
     padding: 0;
@@ -143,40 +143,75 @@ header {
 
 /* Main Content */
 main {
-    padding: 20px;
+    padding-top: 64px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Course Overview Section */
 .course-overview {
-    margin-bottom: 40px;
+    margin: 0px 64px; /* 左右に64pxのマージンを追加 */
 }
 
 .course-overview h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    color: #0B2F4C;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.section-title {
     font-size: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    color: #0B2F4C;
+    font-weight: bold;
 }
 
 .course-description, .training-purpose, .expected-effects {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
-h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+.course-description p, .training-purpose p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 .course-details li, .expected-effects ul li {
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 5px;
+}
+
+.course-details li::before, .expected-effects ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 研修目的・特徴 セクションのスタイル調整 */
+.training-purpose {
+    margin-top: 40px;
 }
 
 .training-purpose p {
-    font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* 期待される効果 セクションのスタイル調整 */
+.expected-effects {
+    margin-top: 40px;
+}
+
+.expected-effects ul li {
+    display: flex;
+    align-items: center;
 }
 
 /* Curriculum Section */
@@ -185,7 +220,7 @@ h3 {
     color: white;
     padding: 30px;
     border-radius: 5px;
-    margin-bottom: 40px;
+    /* margin: 0 64px 40px 64px; */
 }
 
 .curriculum-section h2 {
@@ -271,7 +306,7 @@ h3 {
 
 /* Application Section */
 .application-section {
-    margin-bottom: 40px;
+    margin: 0 64px 40px 64px; /* 左右のマージンを追加 */
 }
 
 .application-section h2 {
