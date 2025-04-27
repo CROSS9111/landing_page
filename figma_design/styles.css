@@ -98,20 +98,33 @@ header {
 .hero-top-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    align-items: flex-end; /* 中央揃えから下揃えに変更 */
+    background-color: rgba(64, 64, 64, 0.5);
     width: 648px;
     height: 64px;
     position: absolute;
     bottom: 32px;
     left: 32px;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .hero-content h1 {
     color: white;
     font-size: 42px;
+    width: 385px;
     margin: 0;
+    margin-left: 16px;
+    align-self: center;
+    white-space: nowrap; /* 改行を防止 */
+}
+
+.button-container {
+    width: 215px;
+    height: 64px;
+    display: flex;
+    align-items: flex-end; /* 中央揃えから下揃えに変更 */
+    justify-content: center;
+    padding-bottom: 8px; /* ボタンの下部余白を調整 */
 }
 
 .hero-button {
@@ -121,7 +134,7 @@ header {
     font-size: 10px;
     border-radius: 30px;
     width: 199px;
-    height: 28px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
