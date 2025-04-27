@@ -351,7 +351,7 @@ main {
 .application-section {
     position: relative;
     margin-top: -100px;
-    background-color: white;
+    background-color: #EEEEEE;
     border-radius: 15px;
     padding: 80px 64px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -395,6 +395,7 @@ main {
 }
 
 /* 助成額・助成率 Styles */
+/* ── 助成額・助成率 Styles ── */
 .subsidy-rate {
     margin-top: 40px;
 }
@@ -407,61 +408,105 @@ main {
 
 .rate-container {
     display: flex;
+    gap: 24px;
     justify-content: space-between;
-    gap: 20px;
+    padding: 0;
+    background: none;
 }
 
+/* 各カード */
 .rate-box {
-    flex: 1;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.rate-box h4 {
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin: 0;
-    font-size: 14px;
-}
-
-.small-business h4 {
-    background-color: #0B2F4C;
-}
-
-.large-business h4 {
-    background-color: #888;
-}
-
-.rate-content {
-    padding: 20px;
-    background-color: #f5f5f5;
+    flex: none;            /* flex:1 を解除して固定幅に */
+    width: 312px;
+    height: 127px;
+    background-color: #fff;
+    border-radius: 15px;
+    /* padding: 32px 24px; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-}
+  }
 
-.base-amount {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-}
-
-.rate-detail {
-    font-size: 12px;
-    margin: 5px 0;
-}
-
-.actual-cost {
+/* タブ見出し */
+.rate-box h4 {
+    display: flex;
+    justify-content: center;     /* 水平方向の中央揃え */
+    align-items: center;         /* 垂直方向の中央揃え */
+    width: 166px;
+    height: 22px;
+    /* padding: 6px 16px; */
+    border-radius: 5px;
     font-size: 10px;
-    color: #666;
-    margin: 5px 0;
+    margin-top:16px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+.small-business h4 { 
+    background-color: #0B2F4C; 
+}
+.large-business h4 { 
+    background-color: #888; 
 }
 
-.final-cost {
-    font-size: 18px;
-    font-weight: bold;
+/* 説明文 */
+.rate-detail,
+.hourly-rate {
+    text-align: center;
+    font-size: 6px;
+    line-height: 1.4;
+    margin: 0px;
+    color: #333;
 }
+
+.rate-numbers {
+    width: 100%;                     /* 親いっぱいに広げる */
+    display: flex;
+    align-items: center;             /* 垂直中央揃え */
+    justify-content: space-between;  /* 先頭と末尾を左右端に */
+  }
+  
+  /* ────────────────────────────────
+     左右の数字ブロック
+  ──────────────────────────────── */
+  .rate-side {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 左ブロック ─ 数字を左端へ */
+  .rate-side.left {
+    justify-content: flex-start;     /* ← ここを変更 */
+    padding-right: 8px;              /* 矢印との間隔だけ残す */
+  }
+  
+  /* 右ブロック ─ 数字を右端へ */
+  .rate-side.right {
+    justify-content: flex-end;       /* ← ここを変更 */
+    padding-left: 8px;               /* 矢印との間隔だけ残す */
+  }
+  
+  /* ────────────────────────────────
+     矢印
+  ──────────────────────────────── */
+  .rate-arrow {
+    width: 121px;                    /* ご希望の幅に固定 */
+    flex: 0 0 121px;
+    margin-inline: 16px;                 /* 縮ませず伸ばさず固定 */
+  }
+
+  
+  /* ── 数字／漢字サイズ ── */
+  .rate-numbers .number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0B2F4C;
+  }
+  .rate-numbers .unit {
+    font-size: 10px;
+    color: #0B2F4C;
+  }
+
 
 /* 申請プロセス・流れ Styles */
 .application-process {
