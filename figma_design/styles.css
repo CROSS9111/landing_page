@@ -1,13 +1,12 @@
 /* Global Styles */
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
-
 h1, h2, h3, h4, h5, h6 {
     color: #0B2F4C;
     margin-top: 0;
@@ -27,13 +26,12 @@ button {
 
 /* Header Styles */
 header {
-    background-color: #0B2F4C;
-    height: 64px;
-    position: relative; /* stickyからrelativeに変更 */
-    top: 0;
-    z-index: 100;
+  background-color: #0B2F4C;
+  height: 64px;
+  position: relative; /* stickyからrelativeに変更 */
+  top: 0;
+  z-index: 100;
 }
-
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -78,18 +76,17 @@ header {
 
 /* Hero Section */
 .hero-section {
-    position: relative;
-    background-image: url('https://bloblppictures.blob.core.windows.net/lppictures/LP_background.png');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    width: 768px;
-    margin: 0 auto 80px; /* 下部に80pxのマージンを追加 */
-    display: flex;
-    align-items: flex-start;
-    padding: 0;
+  position: relative;
+  background-image: url('https://bloblppictures.blob.core.windows.net/lppictures/LP_background.png');
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 768 / 400;
+  width: 100%;
+  margin: 0 auto 80px; /* 下部に80pxのマージンを追加 */
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
 }
-
 .hero-content {
     color: white;
     width: 100%;
@@ -104,7 +101,9 @@ header {
     height: 64px;
     position: absolute;
     bottom: 32px;
-    left: 32px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -150,8 +149,21 @@ main {
 
 /* Course Overview Section */
 .course-overview {
-    margin: 0px 64px; /* 左右に64pxのマージンを追加 */
-}
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    margin: 0;         /* 既存の margin:0 64px は消す */
+  }
+  
+  /* ② 内側 inner を curriculum-inner と同じ設定に */
+  .course-overview-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 64px;
+    /* box-sizing: border-box; */
+  }
 
 .course-overview h2 {
     font-size: 18px;
@@ -169,7 +181,7 @@ main {
     font-weight: bold;
 }
 
-.course-description, .training-purpose, .expected-effects {
+.course-description, .training-purpose {
     margin-bottom: 50px;
 }
 
@@ -207,6 +219,7 @@ main {
 /* 期待される効果 セクションのスタイル調整 */
 .expected-effects {
     margin-top: 40px;
+    margin-bottom: 128px;
 }
 
 .expected-effects ul li {
@@ -218,23 +231,35 @@ main {
 .curriculum-section {
     background-color: #0B2F4C;
     color: white;
-    padding: 80px 64px 200px 64px;
     border-radius: 15px;
-    flex-direction: column;
-    align-items: center;
     position: relative;
-    /* margin: 0 64px 40px 64px; */
+
+    /* ビューポート幅100% & 中央配置 */
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+
+    /* 上下の余白だけ確保（左右は inner で制御） */
+    padding: 80px 0 200px;
+}
+
+/* ── 内部コンテンツを固定幅＆中央寄せ ── */
+.curriculum-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 64px;
 }
 
 .curriculum-section h2 {
     color: white;
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .curriculum-container {
     display: flex;
-    justify-content: flex-start; /* 中央揃えに変更 */
+    justify-content: center; /* 中央揃えに変更 */
     gap: 48px; /* 列間の間隔を40pxに設定 */
     margin-top: 30px;
     margin-bottom: 50px;
@@ -298,7 +323,7 @@ main {
 }
 
 .program-example {
-    margin: 24px 0;
+    margin: 0;
     border: none;
 }
 
@@ -353,13 +378,34 @@ main {
     margin-top: -100px;
     background-color: #EEEEEE;
     border-radius: 15px;
-    padding: 80px 64px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+
+    /* ビューポート幅いっぱいに広げる */
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    /* position: relative;
+    margin-top: -100px;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    padding: 80px 184px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box; */
+    /* width: 100%;
     box-sizing: border-box;
     max-width: 100%;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: 0; */
+}
+
+.application-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 64px;
 }
 
 .subsidy-title {
@@ -375,17 +421,28 @@ main {
 }
 
 .subsidy-info-button {
-    background-color: #0B2F4C;
+    background-color: #1E3A5F;
     color: white;
-    font-size: 10px;
+    font-size: 14px;
     padding: 10px 20px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 216px;
     height: 36px;
-    line-height: 16px;
-    margin: 24px auto;
+    margin: 0 auto;
     position: relative;
     box-sizing: border-box;
+    border-radius: 18px;
+    font-size: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.subsidy-info-button:hover,
+.subsidy-info-button:focus {
+    text-decoration: none;       /* ホバー・フォーカス時もアンダーライン無効 */
 }
 
 .subsidy-info-button::after {
@@ -394,7 +451,6 @@ main {
     margin-left: 5px;
 }
 
-/* 助成額・助成率 Styles */
 /* ── 助成額・助成率 Styles ── */
 .subsidy-rate {
     margin-top: 40px;
@@ -409,9 +465,10 @@ main {
 .rate-container {
     display: flex;
     gap: 24px;
-    justify-content: space-between;
-    padding: 0;
+    justify-content: center;
+    /* padding: 0;
     background: none;
+    margin: 0 auto; */
 }
 
 /* 各カード */
@@ -514,29 +571,30 @@ main {
 }
 
 .application-process h3 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 16px;
     color: #0B2F4C;
 }
 
 .application-process p {
     font-size: 12px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .process-steps {
     counter-reset: process-counter;
     list-style: none;
+    margin: 10px 0px;
     padding-left: 0;
 }
 
 .process-steps > li {
     position: relative;
     counter-increment: process-counter;
-    margin-bottom: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    font-size: 12px;
+    /* font-weight: bold; */
     padding-left: 25px;
 }
 
@@ -544,12 +602,11 @@ main {
     content: counter(process-counter) ".";
     position: absolute;
     left: 0;
-    font-weight: bold;
 }
 
 .process-steps ul {
     margin-top: 8px;
-    padding-left: 25px;
+    padding-left: 0px;
     list-style-type: none;
 }
 
@@ -570,23 +627,25 @@ main {
 
 /* 申請方法 Styles */
 .application-method {
-    margin-top: 40px;
+    margin-top: 24px;
 }
 
 .application-method h3 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 16px;
     color: #0B2F4C;
 }
 
 .application-method p {
     font-size: 12px;
-    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .application-method ul {
     list-style-type: none;
-    padding-left: 0;
+    margin: 8px 0px;
+    padding-left: 23px;
 }
 
 .application-method ul li {
@@ -628,51 +687,159 @@ main {
     margin-top: 15px;
 }
 
-/* Footer */
 footer {
-    background-color: #0B2F4C;
-    color: white;
-    padding: 30px 20px;
-}
+    background-color: #0b2f4c;
+    color: #fff;
+    padding: 40px 54px 24px;
+    font-size: 14px;
+  }
+  
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
 
-.footer-content {
+
+  /* --- 左カラム ---------------------------------- */
+  .footer-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-logo {
+    /* gap: 32px; */
+  }
+  
+  .footer-brand {
     display: flex;
     align-items: center;
+  }
+  
+  .footer-brand-icon {
+    width: 180px;
+    height: 48px;
+  }
+  
+  .footer-brand-text {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* ソーシャルアイコン */
+.footer-social {
+    display: flex;
+    gap: 32px;
+    margin-top: 24px;
+    justify-content: center;
+}
+  .footer-social img {
+  width: 20px;
+  height: 20px;
+}
+  
+  /* --- 中央・右カラム共通 ------------------------ */
+  .footer-middle {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-}
-
-.footer-logo img {
-    width: 30px;
-    height: auto;
-}
-
-.footer-links, .footer-nav {
+    /* margin-left: 170px; */
+    font-weight: 400;
+    margin-top: 12px;
+  }
+  .footer-right {
     display: flex;
-    gap: 20px;
-}
-
-.footer-links a, .footer-nav a {
-    color: white;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .footer-middle a,
+  .footer-right a {
+    color: #fff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 10px;
+  }
+  .footer-middle a:hover,
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+  
+  /* --- 下部クレジット ---------------------------- */
+.footer-bottom {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+}
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 480px) {
-    .curriculum-container {
+@media (max-width: 425px) {
+    .hero-top-row {
+        flex-direction: column;
+        align-items: center;
+        width: 320px; /* 横幅を320pxに設定 */
+        height: 80px;
+        background-color: rgba(64, 64, 64, 0.5); /* 背景色を適用 */
+    }
+
+    .hero-content h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        font-size: 24px; /* 文字サイズを小さく設定 */
+    }
+
+    .curriculum-section {
+        width: auto;
+        left: auto;
+        transform: none;
+        margin: 0;
+        padding: 32px 40px 100px;
+        border-radius: 15px;
+        box-sizing: border-box;
+    }
+    
+    .footer-wrapper {
+        gap: 40px;
+    }
+
+    .curriculum-inner {
+        padding: 0;
+    }
+    
+      .curriculum-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+      }
+    
+      .curriculum-column {
+        flex: none;
+        margin-bottom: 50px;     
+        width: 100%;         
+        max-width: none;     
+        border-radius: 8px;  
+        overflow: hidden; 
+    }
+
+    .rate-container {
         flex-direction: column;
         align-items: center;
     }
-    
-    .curriculum-column {
-        flex: 0 0 296px;
-        margin-bottom: 20px;
+
+    .application-section {
+        margin-top: -30px;
+    }
+
+    .hero-section {
+        margin-bottom: 0px;
     }
 }
